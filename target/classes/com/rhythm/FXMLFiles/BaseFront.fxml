@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="_rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rhythm.FrontEndInitializerController">
+   <center>
+      <AnchorPane fx:id="_moveable" onMousePressed="#DragWindow" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="720.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ImageFiles/FrontEndBG.png" />
+               </image>
+            </ImageView>
+         <Pane fx:id="_rootPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="640.0" />
+            <Button id="_noBackgroundButton" layoutX="591.0" layoutY="14.0" mnemonicParsing="false" onAction="#QuitApplication" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" style="-fx-background-color: TRANSPARENT;" text="X" textFill="#b5b5b5">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+            </Button>
+            <Button id="_noBackgroundButton" layoutX="550.0" layoutY="14.0" mnemonicParsing="false" onAction="#MinimizeApplication" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" style="-fx-background-color: TRANSPARENT;" text="—" textFill="#b5b5b5">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+            </Button>
+      </AnchorPane>
+   </center>
+</BorderPane>

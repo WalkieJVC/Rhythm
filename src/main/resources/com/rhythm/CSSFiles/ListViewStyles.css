@@ -1,0 +1,26 @@
+.list-view{
+    -fx-background-color: Transparent;
+    -fx-padding: 0;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #00a6ff;
+    -fx-text-fill: Black;
+}
+
+.list-cell:even {
+    -fx-background-color: rgba(0,18,40,.8);
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+.list-cell:odd {
+    -fx-background-color: rgba(0,18,40,.7);
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: rgba(0,43,96,.8);
+    -fx-text-fill: white;
+}

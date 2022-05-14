@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="_rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rhythm.UserEndInitializerController">
+    <top>
+        <AnchorPane fx:id="_moveable" onMousePressed="#DragWindow" prefHeight="53.0" prefWidth="1280.0" styleClass="_moveable" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="53.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../ImageFiles/RhythmNavBar.png" />
+            </ImageView>
+            <Button id="_noBackgroundButton" layoutX="1231.0" layoutY="10.0" mnemonicParsing="false" onAction="#Logout" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" style="-fx-background-color: TRANSPARENT;" text="X" textFill="#b5b5b5">
+                <font>
+                    <Font name="Franklin Gothic Medium" size="18.0" />
+                </font>
+            </Button>
+            <Button id="_noBackgroundButton" layoutX="1190.0" layoutY="10.0" mnemonicParsing="false" onAction="#MinimizeApplication" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" style="-fx-background-color: TRANSPARENT;" text="—" textFill="#b5b5b5">
+                <font>
+                    <Font name="Franklin Gothic Medium" size="18.0" />
+                </font>
+            </Button>
+            <Button id="_tabButton" fx:id="_accountButton" alignment="CENTER" contentDisplay="CENTER" layoutX="760.0" mnemonicParsing="false" onAction="#SelectAccountTab" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: Transparent;" stylesheets="@../CSSFiles/ButtonStyles.css" text="Account" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="Franklin Gothic Medium" size="15.0" />
+                </font>
+            </Button>
+            <Rectangle fx:id="_accountSelectionIndicator" arcHeight="5.0" arcWidth="5.0" fill="#00a6ff" height="3.0" layoutX="760.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0; -fx-opacity: 0;" width="120.0" />
+            <Button id="_tabButton" fx:id="_playlistsButton" alignment="CENTER" contentDisplay="CENTER" layoutX="640.0" mnemonicParsing="false" onAction="#SelectPlaylistsTab" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: Transparent;" stylesheets="@../CSSFiles/ButtonStyles.css" text="Playlists" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="Franklin Gothic Medium" size="15.0" />
+                </font>
+            </Button>
+            <Rectangle fx:id="_playlistsSelectionIndicator" arcHeight="5.0" arcWidth="5.0" fill="#00a6ff" height="3.0" layoutX="640.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0; -fx-opacity: 0;" width="120.0" />
+            <Button id="_tabButton" fx:id="_cDsButton" alignment="CENTER" contentDisplay="CENTER" layoutX="520.0" mnemonicParsing="false" onAction="#SelectCDsTab" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: Transparent;" stylesheets="@../CSSFiles/ButtonStyles.css" text="CDs" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="Franklin Gothic Medium" size="15.0" />
+                </font>
+            </Button>
+            <Rectangle fx:id="_cDsSelectionIndicator" arcHeight="5.0" arcWidth="5.0" fill="#00a6ff" height="3.0" layoutX="520.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0; -fx-opacity: 0;" width="120.0" />
+            <Button id="_tabButton" fx:id="_songsButton" alignment="CENTER" contentDisplay="CENTER" layoutX="400.0" mnemonicParsing="false" onAction="#SelectSongsTab" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: Transparent;" stylesheets="@../CSSFiles/ButtonStyles.css" text="Songs" textAlignment="CENTER" textFill="WHITE">
+                <font>
+                    <Font name="Franklin Gothic Medium" size="15.0" />
+                </font>
+            </Button>
+            <Rectangle fx:id="_songsSelectionIndicator" arcHeight="5.0" arcWidth="5.0" fill="#00a6ff" height="3.0" layoutX="400.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 0; -fx-opacity: 0;" width="120.0" />
+            <Label fx:id="_welcomeLabel" layoutX="69.0" layoutY="18.0" text="Welcome Name" textFill="WHITE">
+                <font>
+                    <Font name="Franklin Gothic Medium" size="15.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../ImageFiles/RhythmLogo.png" />
+            </ImageView>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="667.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../ImageFiles/RhythmBackground.png" />
+            </ImageView>
+            <Pane fx:id="_rootTabPane" prefHeight="667.0" prefWidth="1280.0" />
+        </AnchorPane>
+    </center>
+</BorderPane>

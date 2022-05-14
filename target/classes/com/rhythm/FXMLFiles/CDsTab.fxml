@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="1280.0" style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rhythm.CDsTabController">
+    <BorderPane prefHeight="667.0" prefWidth="1280.0" style="-fx-background-color: Transparent;">
+        <top>
+            <AnchorPane prefHeight="50.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,20,40,.9);" BorderPane.alignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00a6ff" height="3.0" layoutY="47.0" stroke="#00aaff" strokeType="INSIDE" style="-fx-arc-height: 0;" width="1280.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="240.0" text="Available CDs" textFill="WHITE">
+                    <font>
+                        <Font name="Franklin Gothic Medium" size="20.0" />
+                    </font>
+                </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="240.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="240.0" text="Songs In CD" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="20.0" />
+               </font>
+            </Label>
+            </AnchorPane>
+        </top>
+      <center>
+         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="227.0" layoutY="102.0" prefHeight="52.0" prefWidth="345.0" text="Now Playing:" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font name="Franklin Gothic Medium" size="45.0" />
+                  </font>
+              </Label>
+              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="233.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@../ImageFiles/RhythmLogo.png" />
+                  </image>
+              </ImageView>
+            <Label fx:id="_cDNameLabel" layoutX="383.0" layoutY="191.0" text="CD Name" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="35.0" />
+               </font>
+            </Label>
+              <Label fx:id="_songNameLabel" layoutX="383.0" layoutY="231.0" text="Song Name Here" textFill="WHITE">
+                  <font>
+                      <Font name="Franklin Gothic Medium" size="25.0" />
+                  </font>
+              </Label>
+              <Label fx:id="_artistNameLabel" layoutX="383.0" layoutY="260.0" text="By: Artist Name Here" textFill="WHITE">
+                  <font>
+                      <Font name="Franklin Gothic Medium" size="15.0" />
+                  </font>
+              </Label>
+              <JFXSlider fx:id="_songSlider" layoutX="44.0" layoutY="370.0" prefHeight="14.0" prefWidth="710.0" styleClass="jfx-slider" stylesheets="@../CSSFiles/SliderStyles.css" />
+              <Button fx:id="_previousSongButton" layoutX="240.0" layoutY="419.0" mnemonicParsing="false" onAction="#PreviousSong" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: Transparent;" stylesheets="@../CSSFiles/ButtonStyles.css" textFill="WHITE">
+                  <font>
+                      <Font name="Franklin Gothic Medium" size="15.0" />
+                  </font>
+              </Button>
+              <Button fx:id="_playPauseButton" layoutX="339.0" layoutY="414.0" mnemonicParsing="false" onAction="#Play" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" prefHeight="38.0" prefWidth="120.0" style="-fx-background-color: Transparent;" stylesheets="@../CSSFiles/ButtonStyles.css" textFill="WHITE">
+                  <font>
+                      <Font name="Franklin Gothic Medium" size="20.0" />
+                  </font>
+              </Button>
+              <Button fx:id="_nextSongButton" layoutX="469.0" layoutY="419.0" mnemonicParsing="false" onAction="#NextSong" onMouseEntered="#HoverEnter" onMouseExited="#HoverExit" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: Transparent;" stylesheets="@../CSSFiles/ButtonStyles.css" textFill="WHITE">
+                  <font>
+                      <Font name="Franklin Gothic Medium" size="15.0" />
+                  </font>
+              </Button>
+             <JFXSlider fx:id="_volumeSlider" layoutX="591.0" layoutY="426.0" prefHeight="14.0" prefWidth="163.0" styleClass="jfx-slider" stylesheets="@../CSSFiles/SliderStyles.css" />
+              <Label fx:id="_messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="49.0" layoutY="482.0" prefHeight="18.0" prefWidth="700.0" text="Nest song on the list is: " textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font name="Franklin Gothic Medium" size="15.0" />
+                  </font>
+              </Label>
+         </AnchorPane>
+      </center>
+      <left>
+         <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="486.0" BorderPane.alignment="CENTER">
+            <ListView fx:id="_cDsListView" fixedCellSize="50.0" maxWidth="-Infinity" minWidth="-Infinity" onMouseClicked="#SelectCD" prefHeight="617.0" prefWidth="240.0" stylesheets="@../CSSFiles/ListViewStyles.css" BorderPane.alignment="CENTER" />
+            <ListView fx:id="_songsListView" fixedCellSize="50.0" layoutX="243.0" maxWidth="-Infinity" minWidth="-Infinity" onMouseClicked="#SelectSong" prefHeight="617.0" prefWidth="240.0" stylesheets="@../CSSFiles/ListViewStyles.css" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00a6ff" height="617.0" layoutX="240.0" stroke="#00aaff" strokeType="INSIDE" style="-fx-arc-height: 0;" width="3.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00a6ff" height="617.0" layoutX="482.0" stroke="#00aaff" strokeType="INSIDE" style="-fx-arc-height: 0;" width="3.0" />
+          </AnchorPane>
+      </left>
+    </BorderPane>
+</Pane>

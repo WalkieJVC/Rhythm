@@ -1,0 +1,10 @@
+#_tabButton{
+    -fx-background-color: transparent;
+    -fx-opacity: 1;
+    -fx-text-fill: WHITE;
+}
+
+#_tabButton:disabled{
+    -fx-opacity: 1;
+    -fx-text-fill: #00a6ff;
+}
