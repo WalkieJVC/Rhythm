@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `rhythm` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `rhythm` /*!40100 DEFAULT CHARACTER SET UTF-8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `rhythm`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
@@ -111,7 +111,7 @@ CREATE TABLE `login` (
   PRIMARY KEY (`LoginID`),
   UNIQUE KEY `idLogin_UNIQUE` (`LoginID`),
   UNIQUE KEY `Username_UNIQUE` (`Username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,6 +120,7 @@ CREATE TABLE `login` (
 
 LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES (1,'walkiejvc',_binary '\�\�H#��\�x㒋�n��y'),(2,'walkie',_binary '\�\�H#��\�x㒋�n��y');
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,7 +139,7 @@ CREATE TABLE `playlist` (
   UNIQUE KEY `idtable1_UNIQUE` (`PlaylistID`),
   KEY `fk_Playlist_User_idx` (`UserID`),
   CONSTRAINT `fk_Playlist_User` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,6 +148,7 @@ CREATE TABLE `playlist` (
 
 LOCK TABLES `playlist` WRITE;
 /*!40000 ALTER TABLE `playlist` DISABLE KEYS */;
+INSERT INTO `playlist` VALUES (1,1,'My Favorites'),(2,2,'asd');
 /*!40000 ALTER TABLE `playlist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,7 +169,7 @@ CREATE TABLE `playlists_songs` (
   KEY `fk_Playlists_Songs_Songs_idx` (`SongID`),
   CONSTRAINT `fk_Playlist_Songs_Playlist` FOREIGN KEY (`PlaylistID`) REFERENCES `playlist` (`PlaylistID`),
   CONSTRAINT `fk_Playlists_Songs_Songs` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,6 +178,7 @@ CREATE TABLE `playlists_songs` (
 
 LOCK TABLES `playlists_songs` WRITE;
 /*!40000 ALTER TABLE `playlists_songs` DISABLE KEYS */;
+INSERT INTO `playlists_songs` VALUES (1,1,4),(2,1,7),(3,1,2),(4,2,3);
 /*!40000 ALTER TABLE `playlists_songs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -195,7 +198,7 @@ CREATE TABLE `session` (
   `LogoutTime` time DEFAULT NULL,
   PRIMARY KEY (`SessionID`),
   UNIQUE KEY `idSession_UNIQUE` (`SessionID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,6 +207,7 @@ CREATE TABLE `session` (
 
 LOCK TABLES `session` WRITE;
 /*!40000 ALTER TABLE `session` DISABLE KEYS */;
+INSERT INTO `session` VALUES (1,1,'2022-05-13','22:23:35','2022-05-13','22:28:37'),(2,1,'2022-05-14','13:35:00','2022-05-14','13:36:38'),(3,1,'2022-05-14','13:36:59','2022-05-14','13:37:02'),(4,1,'2022-05-14','13:37:42',NULL,NULL),(5,1,'2022-05-14','13:40:44',NULL,NULL),(6,1,'2022-05-14','13:43:08','2022-05-14','13:44:08'),(7,1,'2022-05-14','13:51:10','2022-05-14','13:51:54'),(8,1,'2022-05-14','13:54:07','2022-05-14','13:54:31'),(9,2,'2022-05-14','13:59:49','2022-05-14','14:00:29'),(10,1,'2022-05-14','14:00:44','2022-05-14','14:01:21'),(11,1,'2022-05-14','14:01:41','2022-05-14','14:02:06'),(12,1,'2022-05-14','14:03:32','2022-05-14','14:03:52'),(13,2,'2022-05-14','14:04:01','2022-05-14','14:04:11');
 /*!40000 ALTER TABLE `session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +236,7 @@ CREATE TABLE `song` (
 
 LOCK TABLES `song` WRITE;
 /*!40000 ALTER TABLE `song` DISABLE KEYS */;
-INSERT INTO `song` VALUES (1,1,'Freedom','src/main/resources/com/rhythm/SongFiles/Freedom,Goodknight.wav'),(2,2,'Royalty','src/main/resources/com/rhythm/SongFiles/Royalty,Egzog.mp3'),(3,2,'No Rival','src/main/resources/com/rhythm/SongFiles/NoRival,Egzog.mp3'),(4,3,'Circus','src/main/resources/com/rhythm/SongFiles/Circus,Isolated.mp3'),(5,4,'Falling','src/main/resources/com/rhythm/SongFiles/Falling,Rival.mp3'),(6,5,'There\'s Nobody Else','src/main/resources/com/rhythm/SongFiles/There\'sNobodyElse,ChrisLater.mp3'),(7,6,'Higher','src/main/resources/com/rhythm/SongFiles/Higher,Hoober.mp3');
+INSERT INTO `song` VALUES (1,1,'Freedom','C:/Users/WalkieJVC/Desktop/GithubRepos/Rhythm/src/main/resources/com/rhythm/SongFiles/Freedom,Goodknight.wav'),(2,2,'Royalty','C:/Users/WalkieJVC/Desktop/GithubRepos/Rhythm/src/main/resources/com/rhythm/SongFiles/Royalty,Egzog.mp3'),(3,2,'No Rival','C:/Users/WalkieJVC/Desktop/GithubRepos/Rhythm/src/main/resources/com/rhythm/SongFiles/NoRival,Egzog.mp3'),(4,3,'Circus','C:/Users/WalkieJVC/Desktop/GithubRepos/Rhythm/src/main/resources/com/rhythm/SongFiles/Circus,Isolated.mp3'),(5,4,'Falling','C:/Users/WalkieJVC/Desktop/GithubRepos/Rhythm/src/main/resources/com/rhythm/SongFiles/Falling,Rival.mp3'),(6,5,'There\'s Nobody Else','C:/Users/WalkieJVC/Desktop/GithubRepos/Rhythm/src/main/resources/com/rhythm/SongFiles/There\'sNobodyElse,ChrisLater.mp3'),(7,6,'Higher','C:/Users/WalkieJVC/Desktop/GithubRepos/Rhythm/src/main/resources/com/rhythm/SongFiles/Higher,Hoober.mp3');
 /*!40000 ALTER TABLE `song` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,7 +258,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `idUser_UNIQUE` (`UserID`),
   KEY `fk_User_Login1_idx` (`LoginID`),
   CONSTRAINT `fk_User_Login` FOREIGN KEY (`LoginID`) REFERENCES `login` (`LoginID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,6 +267,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,1,'Juan','Clark','7025619958','walkiejvc@gmail.com'),(2,2,'Juan','Enrique','123123123','walkiejvc@gmail.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -762,4 +767,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-13 22:18:30
+-- Dump completed on 2022-05-14 14:08:13

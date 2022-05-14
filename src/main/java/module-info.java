@@ -2,6 +2,8 @@ module com.rhythm {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
+    requires javafx.mediaEmpty;
+    requires javafx.graphics;
 
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
